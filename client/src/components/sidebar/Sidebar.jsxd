@@ -1,0 +1,137 @@
+import React, { useState, useEffect } from 'react';
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import { FaArtstation } from 'react-icons/fa';
+import { useNavigate, Link } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode'; // Correct import for jwt-decode
+import { useUser } from '../UserContext'; // Adjust the path as necessary
+
+const Sidebar = () => {
+  const [isTrendOpen, setIsTrendOpen] = useState(false);
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
+  const [isSettingOpen, setIsSettingOpen] = useState(false);
+  const { userdata, setUserdata } = useUser(); // Get userdata from context
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false); // State to track if the user is an admin
+  const [isSeller, setIsSeller] = useState(false); // State to track if the user is a seller
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      const decodedData = jwtDecode(token); // Decode the token correctly
+      setUserdata(decodedData.user); // Set userdata after decoding
+      setIsLoggedIn(true);
+    }
+  }, [setUserdata]); // Run this effect when the component mounts, and if setUserdata changes
+
+  useEffect(() => {
+    if (userdata) {
+      if (userdata.acctype === 'admin') { // Check if user is an admin
+        setIsAdmin(true);
+      } else if (userdata.acctype === 'seller') { // Check if user is a seller
+        setIsSeller(true);
+      }
+    }
+  }, [userdata]); // Run this effect when userdata changes
+
+  const toggleTrend = () => setIsTrendOpen(!isTrendOpen);
+  const toggleHelp = () => setIsHelpOpen(!isHelpOpen);
+  const toggleSetting = () => setIsSettingOpen(!isSettingOpen);
+
+  const handleSignIn = () => {
+    navigate('/login'); // Navigate to login page if user is not logged in
+  };
+
+  return (
+    <div className="bg-gray-400 h-screen w-64 fixed top-0 left-0 dark:bg-gray-800 dark:text-white font-mono z-50">
+      <div className="p-4 flex items-center">
+        <div className="flex items-center">
+          <FaArtstation className='text-3xl text-blue-500' />
+          <span className="ml-2 pt-2 text-xl font-bold text-gray-800 dark:text-white">ArticHub</span>
+        </div>
+      </div>
+
+      <div className='mt-6 ml-4 p-4'>
+        {/* Trending Section */}
+        <div className='flex p-4'>
+          <button className='flex w-full justify-between' onClick={toggleTrend}>
+            <h2 className='text-lg font-bold hover:text-gray-800 dark:hover:text-white cursor-pointer'>Trending</h2>
+            <span className='text-gray-400 text-lg'>{isTrendOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
+          </button>
+        </div>
+
+        {isTrendOpen && (
+          <ul className="ml-4 p-2">
+            <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Option 1</li>
+            <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Option 2</li>
+            <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Option 3</li>
+          </ul>
+        )}
+
+        {/* Help Section */}
+        <div className='flex p-4'>
+          <button className='flex w-full justify-between' onClick={toggleHelp}>
+            <h2 className='text-lg font-bold hover:text-gray-800 dark:hover:text-white cursor-pointer'>Help</h2>
+            <span className='text-gray-400 text-lg'>{isHelpOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
+          </button>
+        </div>
+
+        {isHelpOpen && (
+          <ul className="ml-4 p-2">
+            <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">FAQs</li>
+            <Link to="/PrivacyPolicy"><li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Privacy Policy</li></Link>
+            <Link to="/CustomerCare"><li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Customer Care</li></Link>
+          </ul>
+        )}
+
+        {/* Settings Section */}
+        <div className='flex p-2'>
+          <button className='flex w-full justify-between' onClick={toggleSetting}>
+            <h2 className='text-lg font-bold hover:text-gray-800 dark:hover:text-white cursor-pointer'>Settings</h2>
+            <span className='text-gray-400 text-lg'>{isSettingOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
+          </button>
+        </div>
+
+        {isSettingOpen && (
+          <ul className="ml-4 p-2">
+            {isLoggedIn ? (
+              <>
+                {isAdmin ? (
+                  <>
+                    {/* Admin-specific options */}
+                    <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Admin Dashboard</li>
+                    <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Manage Users</li>
+                    <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Manage Orders</li>
+                    <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Product Management</li>
+                  </>
+                ) : isSeller ? (
+                  <>
+                    {/* Seller-specific options */}
+                    <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Seller Dashboard</li>
+                    <Link to="/listingmanager"><li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Manage Listings</li></Link>
+                    <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Sales Reports</li>
+                  </>
+                ) : (
+                  <>
+                    {/* Regular user options */}
+                    <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer"><Link to="/user/account">Account Settings</Link></li>
+                    <Link to="/users/orders"><li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">My Orders</li></Link>
+                    <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer">Preferences</li>
+                  </>
+                )}
+              </>
+            ) : (
+              <li className="mb-2 hover:bg-gray-200 dark:hover:bg-black px-2 py-1 rounded cursor-pointer" onClick={handleSignIn}>
+                <Link to="/login">Sign In</Link>
+              </li>
+            )}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar;
