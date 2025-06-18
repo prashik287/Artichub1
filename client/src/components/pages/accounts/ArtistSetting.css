@@ -1,0 +1,13 @@
+.imgborder img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatardiv{
+	align-content: center;
+	border: 20px;
+	border-color: white;
+
+}

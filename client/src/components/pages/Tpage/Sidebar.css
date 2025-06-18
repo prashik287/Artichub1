@@ -1,0 +1,73 @@
+/* Import only the scales you need */
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/gray-dark.css";
+@import "@radix-ui/colors/blue-dark.css";
+@import "@radix-ui/colors/green-dark.css";
+@import "@radix-ui/colors/red-dark.css";
+
+/* Use the colors as CSS variables */
+
+
+@import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/violet.css";
+
+/* reset */
+.Sidebar{
+  /* background:var(--accent-3);  */
+  background-color: aqua;
+  width: 100vh;
+  left: 0%;
+  top: 10px;
+  height: 100vh;
+  color: aliceblue;
+  position: fixed;
+}
+
+.SearchBar {
+  padding-top: 20%;
+
+
+}
+
+.help{
+  
+  margin-top: 10%;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.listm {
+  text-decoration: none;
+  list-style-type: none;
+  margin-bottom: 4%;
+  padding-bottom: 4%;
+
+}
+.labeli{
+  padding: 2%;
+  text-align: center;
+}
+
+.labeli:hover{
+  background-color: brown;
+  border-radius: 10px;
+}
+
+.lim {
+  padding: 2%;
+
+
+}
+
+.lim:hover{
+  background-color: blueviolet;
+  border-radius: 10px;
+}
+.SideContent {
+  padding-top:10%;
+}
+

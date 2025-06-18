@@ -1,0 +1,46 @@
+@import "tailwindcss";
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--accent-3);
+  z-index: 10;
+}
+
+.main-content {
+  display: flex;
+  margin-top: 64px; /* Adjust based on Navbar height */
+  height: calc(100vh - 64px); /* Ensure content fits below the navbar */
+}
+
+.Sidebar {
+  width: 350px; /* Increased width from 250px */
+  background: #1a1a1a;
+  height: 100vh;
+  padding: 2em;
+  box-sizing: border-box;
+  flex-shrink: 0; /* Prevent Sidebar from shrinking */
+}
+
+.page-content {
+  display: flex;
+  flex: 1; /* Takes remaining space */
+  height: 100vh;
+  margin-top: 10vh;
+  margin-left: 50vh;
+  /* border-radius: 2%; */
+  overflow-y: auto;
+}
+
+.back {
+  margin-left: 350px; /* Adjusted to match Sidebar width */
+  width: calc(100% - 350px); /* Ensures content takes remaining space */
+}
+

@@ -1,0 +1,12 @@
+period:'Contemporary' 'Post-War' '19th Century' 'Modern' 
+catrgory:
+
+'Post-Minimalism' 'Abstract Expressionism' 'Abstract' 'Baroque'
+ 'Minimalism' 'Surrealism' 'Realism' '[nan]' 'Post-Impressionism'
+ 'Magic Realism ' 'Impressionism' 'Modernism' 'Conceptual '
+ 'Neo-Expressionism' 'Punk, Young British Artists, Abstract'
+ 'Expressionism' 'Nouveau Réalisme' 'Pop Art' 'Neogeo' 'Social Realism'
+ 'Street Art' 'Photorealism' 'Environmental Art' 'Cubism'
+ 'Geometric Abstraction' 'Art Nouveau' 'Romanticism' 'Traditional'
+ 'Organic/Biomorphic Abstraction' 'Feminist Art ' 'Performance Art'
+ 'Art Brut' 'Punk' 'Art Deco' 'Painting'

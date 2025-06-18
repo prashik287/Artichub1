@@ -1,0 +1,292 @@
+@import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/violet.css";
+.main{
+
+  margin-top: 7%;
+  background-color: aqua;
+  margin-left: 27%;
+  padding: 5%;
+  border-radius: 1em;
+  margin-right: 5%
+}
+
+@import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/violet.css";
+
+/* reset */
+button,
+fieldset,
+input {
+	all: unset;
+}
+
+.TabsRoot {
+	display: flex;
+	flex-direction: column;
+	width: 70em;
+	box-shadow: 0 2px 10px var(--black-a4);
+}
+
+.TabsList {
+	flex-shrink: 0;
+	display: flex;
+	border-bottom: 1px solid var(--mauve-6);
+}
+
+.TabsTrigger {
+	font-family: inherit;
+	background-color: white;
+	padding: 0 20px;
+	height: 45px;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 15px;
+	line-height: 1;
+	color: var(--mauve-11);
+	user-select: none;
+}
+.TabsTrigger:first-child {
+	border-top-left-radius: 6px;
+}
+.TabsTrigger:last-child {
+	border-top-right-radius: 6px;
+}
+.TabsTrigger:hover {
+	color: var(--violet-11);
+}
+.TabsTrigger[data-state="active"] {
+	color: var(--violet-2);
+	box-shadow:
+		inset 0 -1px 0 0 currentColor,
+		0 1px 0 0 currentColor;
+}
+.TabsTrigger:focus {
+	position: relative;
+	box-shadow: 0 0 0 2px black;
+}
+
+Select {
+	color: black;
+}
+.TabsContent {
+	flex-grow: 1;
+	padding: 20px;
+	background-color: white;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	outline: none;
+}
+.TabsContent:focus {
+	box-shadow: 0 0 0 2px black;
+}
+
+.Text {
+	margin-top: 0;
+	margin-bottom: 20px;
+	color: var(--mauve-2);
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+.Fieldset {
+	margin-bottom: 15px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.Label {
+	font-size: 13px;
+	line-height: 1;
+	margin-bottom: 10px;
+	color: var(--violet-2);
+	display: block;
+	user-select: none;
+}
+
+.Input {
+	flex: 1 0 auto;
+	border-radius: 4px;
+	padding: 0 10px;
+	font-size: 15px;
+	line-height: 1;
+	color: var(--violet-5);
+	box-shadow: 0 0 0 1px var(--violet-7);
+	height: 35px;
+}
+.Input:focus {
+	box-shadow: 0 0 0 2px var(--violet-8);
+}
+
+.Button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	padding: 0 15px;
+	font-size: 15px;
+	line-height: 1;
+	font-weight: 500;
+	height: 35px;
+}
+.Button.green {
+	background-color: var(--green-4);
+	color: var(--green-11);
+}
+.Button.green:hover {
+	background-color: var(--green-5);
+}
+.Button.green:focus {
+	box-shadow: 0 0 0 2px var(--green-7);
+}
+
+@import "@radix-ui/colors/black-alpha.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/violet.css";
+
+/* reset */
+button {
+	all: unset;
+}
+
+.AlertDialogOverlay {
+	background-color: var(--black-a9);
+	position: fixed;
+	inset: 0;
+	animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.AlertDialogContent {
+	background-color: var(--gray-1);
+	border-radius: 6px;
+	box-shadow: var(--shadow-6);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90vw;
+	max-width: 500px;
+	max-height: 85vh;
+	padding: 25px;
+	animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.AlertDialogContent:focus {
+	outline: none;
+}
+
+.AlertDialogTitle {
+	margin: 0;
+	color: var(--mauve-12);
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.AlertDialogDescription {
+	margin-bottom: 20px;
+	color: var(--mauve-11);
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+.Button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	padding: 0 15px;
+	font-size: 15px;
+	line-height: 1;
+	font-weight: 500;
+	height: 35px;
+	user-select: none;
+}
+.Button:focus:not(:focus-visible) {
+	outline: 0;
+}
+.Button:focus-visible {
+	outline: 2px solid var(--violet-6);
+	outline-offset: 1px;
+}
+.Button.violet {
+	background-color: var(--violet-4);
+	color: var(--violet-12);
+	outline-color: var(--violet-6);
+}
+.Button.violet:hover {
+	background-color: var(--mauve-3);
+}
+.Button.red {
+	background-color: var(--red-4);
+	color: var(--red-11);
+	outline-color: var(--red-7);
+}
+.Button.red:hover {
+	background-color: var(--red-5);
+}
+.Button.mauve {
+	background-color: var(--mauve-4);
+	color: var(--mauve-11);
+	outline-color: var(--mauve-7);
+}
+.Button.mauve:hover {
+	background-color: var(--mauve-5);
+}
+
+@keyframes overlayShow {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes contentShow {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -48%) scale(0.96);
+	}
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.dialog-content.success {
+  border: 3px solid #4caf50;
+  color: #4caf50;
+}
+
+.dialog-content.error {
+  border: 3px solid #f44336;
+  color: #f44336;
+}
+
