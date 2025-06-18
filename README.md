@@ -1,4 +1,4 @@
-# ⚡️ ArticHub: The Future of Decentralized Art Commerce 🖼️✨
+# ⚡️ ArticHub: The Future of  Art Commerce 🖼️✨
 
 Welcome to **ArticHub**, a cutting-edge platform where **creativity meets code**, and **art meets AI**. Empowering artists to **sell or auction their masterpieces**, and helping buyers to **discover & bid on unique art** — all in a smooth, intelligent ecosystem.
 
