@@ -36,7 +36,7 @@ Welcome to **ArticHub**, a cutting-edge platform where **creativity meets code**
 
 | Frontend | Backend | AI/ML | Database | Other |
 |---------|---------|--------|----------|-------|
-| React.js ⚛️ | Django + DRF 🐍 | Scikit-Learn 🧠 | PostgreSQL 🐘 | JWT Auth 🔐 |
+| React.js ⚛️ | Django + DRF 🐍 | Scikit-Learn 🧠 | MySQL 🐘 | JWT Auth 🔐 |
 | TailwindCSS 🎨 | Django ORM 🧩 | Custom Recommender System 🎯 | | REST APIs 🚀 |
 
 ---
