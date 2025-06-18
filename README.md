@@ -59,7 +59,7 @@ Welcome to **ArticHub**, a cutting-edge platform where **creativity meets code**
 <!-- Insert futuristic UI screenshots here -->
 | Home Page | Auctions | Seller Dashboard |
 |----------|----------|------------------|
-| ![home](screens/home.png) | ![auction](screens/auction.png) | ![dashboard](screens/dashboard.png) |
+| ![home](images/home.jpg) | ![auction](screens/auction.png) | ![dashboard](screens/dashboard.png) |
 
 ---
 
