@@ -69,11 +69,11 @@ Welcome to **ArticHub**, a cutting-edge platform where **creativity meets code**
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/yourusername/artichub.git
-cd artichub
+git clone https://github.com/prashik287/Artichub1.git
+cd Artichub1
 
 # 2. Backend Setup
-cd backend
+cd server
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
